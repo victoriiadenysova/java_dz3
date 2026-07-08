@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'ua.goit.database.Main'
+}
+
+group = 'ua.goit'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.h2database:h2:2.2.224'
+    implementation 'org.flywaydb:flyway-core:9.22.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
